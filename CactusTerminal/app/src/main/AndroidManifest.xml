@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Cactus needs this to download the Needle 2 model on first run -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- For the vibrate tool -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Lets us list launchable apps on Android 11+ (package visibility) so the
+         "open_app" tool can find apps by name without needing QUERY_ALL_PACKAGES -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="Cactus Terminal"
+        android:theme="@style/Theme.CactusTerminal"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CactusTerminal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
